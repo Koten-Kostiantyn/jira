@@ -1,5 +1,5 @@
 1. RUN this command:
-yum -y install git && git clone https://github.com/oookotooo/jira.git && cd jira && ./start.sh && systemctl start jira && sleep 5 && systemctl status jira
+yum -y install git && git clone https://github.com/oookotooo/jira.git && cd jira && ./start.sh
 2. Follow MySQL setup configuration.
 3. Open jira in browser:
 localhost:8080
