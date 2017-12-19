@@ -61,3 +61,8 @@
       dest: /data/jira/jira/bin/check-java.sh
       regexp: '(grep \"java version\")' 
       replace: 'grep "openjdk version"'
+     
+- replace:
+    dest: /data/jira/jira/bin/check-java.sh
+    regexp: '(\"\$_RUNJAVA\")'
+    replace: '/usr/bin/java'
