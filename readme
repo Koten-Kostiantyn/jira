@@ -1,7 +1,17 @@
-0 install git and ansible
-1 run mysql and finish_mysql.sh
-2 run ansible playbook jira.yaml
-3 fix in /data/jira/atlassian-jira-7.6.0-EAP01-standalone/bin/check-java.sh
+RUN this command:
+yum -y install git && git clone https://github.com/oookotooo/jira.git && ./start.sh && systemctl jira start
+Open jira in browser:
+localhost:8080
+or (in my case)
+localhost:3880
+
+It will:
+0 install git and ansible and clone this repo
+1 Install mySQL(run mysql and finish_mysql.sh)
+2 Install JIRA(run ansible playbook jira.yaml)
+3 Run JIRA
+
+Known issues
+1. fix in /data/jira/atlassian-jira-7.6.0-EAP01-standalone/bin/check-java.sh
 in line "grep "java version"" to "grep "openjdk version""
-4 jira runs on port 8080
-5 fix permmissions for chown -R jira:jira /data/jira/
+2. Jira unarchives as atlassian-jira-core-7.6.0-m0124-standalone not as atlassian-jira-7.6.0-EAP01-standalone
