@@ -1,5 +1,5 @@
 RUN this command:
-yum -y install git && git clone https://github.com/oookotooo/jira.git && ./start.sh && systemctl jira start
+yum -y install git && git clone https://github.com/oookotooo/jira.git && ./start.sh && systemctl start jira
 Open jira in browser:
 localhost:8080
 or (in my case)
