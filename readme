@@ -15,3 +15,4 @@ Known issues
 1. fix in /data/jira/atlassian-jira-7.6.0-EAP01-standalone/bin/check-java.sh
 in line "grep "java version"" to "grep "openjdk version""
 2. Jira unarchives as atlassian-jira-core-7.6.0-m0124-standalone not as atlassian-jira-7.6.0-EAP01-standalone
+3. https://jira.atlassian.com/browse/JRASERVER-46152
