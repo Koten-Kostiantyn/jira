@@ -23,11 +23,11 @@
   unarchive: src={{ jira_user_home_dir }}/atlassian-jira-{{ jira_version }}.tar.gz dest={{ jira_user_home_dir }} copy=no
   when: not st.stat.exists
 
-- name: stat for folder 760-m0124
+- name: register stat for folder 760-m0124
   stat: path=/data/jira/atlassian-jira-core-7.6.0-m0124-standalone
   register: m0124
 
-- name: Microfix for 7.6.0-eap01
+- name: Rename folder from 7.6.0-m0124 to 7.6.0-eap01
   command: mv /data/jira/atlassian-jira-core-7.6.0-m0124-standalone/ /data/jira/atlassian-jira-7.6.0-EAP01-standalone/
   when: m0124.stat.exists
 
@@ -48,10 +48,16 @@
 #  template: src=jira.js dest=/etc/init.d/jira
 #  when: ansible_os_family == "RedHat" and ansible_lsb.major_release|int == 6
 
-- name: Fix permissions for jira user
-  file: dest={{ jira_user_home_dir }}/atlassian-jira-{{ jira_version }}-standalone owner={{ jira_user }} group={{ jira_user_group }} mode=0755 recurse=yes
+- name: Fix permissions for jira 
+  file: dest={{ jira_user_home_dir }} owner={{ jira_user }} group={{ jira_user_group }} mode=0755 recurse=yes
 
 - name: Install MySQL JDBC connector
   copy:
     src: "{{ role_path }}/files/{{ jdbc_connector }}"
     dest: "{{ jira_user_home_dir }}/atlassian-jira-{{ jira_version }}-standalone/lib/{{ jdbc_connector }}"
+
+- name: Fix jira grep Java error
+  replace:
+      dest: /data/jira/jira/bin/check-java.sh
+      regexp: '(grep \"java version\")' 
+      line: 'grep "openjdk version"'
