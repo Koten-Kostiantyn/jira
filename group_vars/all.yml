@@ -10,5 +10,5 @@ jira_download_link: "https://www.atlassian.com/software/jira/downloads/binary/at
 jira_version: 7.6.0-EAP01 
 jira_version_file_sha256sum: c58b2e8b89abb8565b9219c61d9f3cd841d8d52b412a1315895ff7c95a19ec62
 
-java_version: java-1.8.0-openjdk-devel-1.8.0.151-1.b12.el7_4.x86_64
+java_version: java-1.8.0 #-openjdk-devel-1.8.0.151-1.b12.el7_4.x86_64
 jdbc_connector: mysql-connector-java-5.1.44-bin.jar
