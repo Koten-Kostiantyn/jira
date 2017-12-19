@@ -6,9 +6,9 @@ jira_user_group_gid: 527
 jira_user: jira 
 jira_user_uid: 527 
 jira_home: /data/jira/jira_home
-jira_download_link: "http://www.atlassian.com/software/jira/downloads/binary/atlassian-jira" 
-jira_version: 6.3.7 
-jira_version_file_sha256sum: 6e4cf47bfeb12b2ea7fbd286b04a71cd7317c33a4316fcd97571573f6723966e
+jira_download_link: "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core" 
+jira_version: 7.6.0-EAP01 
+jira_version_file_sha256sum: c58b2e8b89abb8565b9219c61d9f3cd841d8d52b412a1315895ff7c95a19ec62
 
-java_version: java-1.7.0-openjdk-1.7.0.151-2.6.11.1.el7_4.x86_64
+java_version: java-1.8.0-openjdk-devel-1.8.0.151-1.b12.el7_4.x86_64
 jdbc_connector: mysql-connector-java-5.1.44-bin.jar

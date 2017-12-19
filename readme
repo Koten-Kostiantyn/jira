@@ -1,0 +1,7 @@
+0 install git and ansible
+1 run mysql and finish_mysql.sh
+2 run ansible playbook jira.yaml
+3 fix in /data/jira/atlassian-jira-7.6.0-EAP01-standalone/bin/check-java.sh
+in line "grep "java version"" to "grep "openjdk version""
+4 jira runs on port 8080
+5 fix permmissions for chown -R jira:jira /data/jira/
